@@ -1,12 +1,18 @@
 package handlers
+package handlers
 
 import (
     "html/template"
     "net/http"
     "strconv"
     "main/data"
+    "main/data"
 )
 
+var books = []data.Book{
+    {ID: 1, Title: "The Go Programming Language", Author: "Alan Donovan", Year: 2015},
+    {ID: 2, Title: "Clean Code", Author: "Robert C. Martin", Year: 2008},
+    {ID: 3, Title: "The Pragmatic Programmer", Author: "Andrew Hunt", Year: 1999},
 var books = []data.Book{
     {ID: 1, Title: "The Go Programming Language", Author: "Alan Donovan", Year: 2015},
     {ID: 2, Title: "Clean Code", Author: "Robert C. Martin", Year: 2008},
@@ -27,6 +33,7 @@ func BookHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
+    var selected *data.Book
     var selected *data.Book
     for _, b := range books {
         if b.ID == id {
