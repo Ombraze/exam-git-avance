@@ -11,7 +11,7 @@ var books = []Book{
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-return
+    return
 }
 
 func BookHandler(w http.ResponseWriter, r *http.Request) {
